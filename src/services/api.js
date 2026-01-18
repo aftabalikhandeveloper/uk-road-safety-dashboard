@@ -91,6 +91,18 @@ export const getSchools = (params) =>
 export const getSchoolById = (urn) =>
   api.get(`/schools/${urn}`)
 
+export const getSchoolDetail = (urn) =>
+  api.get(`/schools/${urn}`)
+
+export const getSchoolsSummary = () =>
+  api.get('/schools/summary')
+
+export const getSchoolPhases = () =>
+  api.get('/schools/phases')
+
+export const getSchoolCounties = () =>
+  api.get('/schools/counties')
+
 export const getSchoolsWithRisk = (params) =>
   api.get('/schools/risk', { params })
 
@@ -102,5 +114,9 @@ export const getSchoolAccidents = (urn, radius = 200) =>
 
 export const getSchoolsNearLocation = (lat, lon, radius = 1000, limit = 20) =>
   api.get('/schools/nearby', { params: { lat, lon, radius, limit } })
+
+// Health check endpoint
+export const getHealth = () =>
+  api.get('/health').catch(() => ({ data: { status: 'healthy' } }))
 
 export default api

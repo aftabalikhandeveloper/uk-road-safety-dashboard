@@ -118,6 +118,7 @@ function App() {
         <main className="p-4 lg:p-6">
           <Routes>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/map" element={<AccidentMap />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/hotspots" element={<Hotspots />} />
