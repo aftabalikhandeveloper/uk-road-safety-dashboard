@@ -116,9 +116,10 @@ export const getNearbyAccidents = (lat, lon, radius = 500, years = null, limit =
 export const getLSOAStats = (lsoaCode) =>
   api.get(`/accidents/lsoa/${lsoaCode}/stats`)
 
-// Health check
+// Health check - use full URL since /health is at root, not under /api/v1
+const API_ROOT = import.meta.env.VITE_API_URL || 'https://uk-road-safety-api-815530569947.europe-west1.run.app'
 export const getHealth = () =>
-  axios.get('/health')
+  axios.get(`${API_ROOT}/health`)
 
 // Schools endpoints
 export const getSchools = (params = {}) =>
