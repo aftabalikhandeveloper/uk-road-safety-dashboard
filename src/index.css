@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fatal-color: #dc2626;
+  --serious-color: #f59e0b;
+  --slight-color: #16a34a;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Leaflet map fixes */
+.leaflet-container {
+  @apply rounded-lg;
+  z-index: 0;
+}
+
+/* Stats card animations */
+.stat-card {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.stat-card:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
+
+/* Severity badge styles */
+.severity-fatal {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.severity-serious {
+  @apply bg-amber-100 text-amber-800 border-amber-200;
+}
+
+.severity-slight {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full border-4 border-gray-200 border-t-blue-600;
+}
+
+/* Risk category colors */
+.risk-very-high {
+  @apply bg-red-600 text-white;
+}
+
+.risk-high {
+  @apply bg-orange-500 text-white;
+}
+
+.risk-medium {
+  @apply bg-yellow-500 text-gray-900;
+}
+
+.risk-low {
+  @apply bg-green-500 text-white;
+}
+
+.risk-very-low {
+  @apply bg-green-300 text-gray-900;
+}
