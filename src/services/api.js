@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const API_BASE = '/api/v1'
+// Use environment variable for API URL, fallback to production FastAPI URL
+const API_BASE = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api/v1`
+  : 'https://uk-road-safety-api-815530569947.europe-west1.run.app/api/v1'
 
 const api = axios.create({
   baseURL: API_BASE,
